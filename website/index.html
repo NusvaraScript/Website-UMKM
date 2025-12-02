@@ -37,22 +37,22 @@
                         <h2 class="mb-4 display-6 fw-bold text-dark">Konsultasi Proyek Baru</h2>
                         <p class="text-muted mb-4">Tim kami siap membantu Anda menyusun arsitektur digital yang paling tepat untuk bisnis Anda.</p>
                         
-                        <form>
+                        <form action="../admin/service/tambah.php" method="POST">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama Lengkap:</label>
-                                <input type="text" placeholder="Nama Anda" id="nama" class="form-control form-control-lg">
+                                <input type="text" placeholder="Nama Anda" id="nama" name="nama" class="form-control form-control-lg">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">E-mail Bisnis:</label>
-                                <input type="email" placeholder="contoh@bisnis.com" id="email" class="form-control form-control-lg">
+                                <input type="email" placeholder="contoh@bisnis.com" id="email" name="email" class="form-control form-control-lg">
                             </div>
                             <div class="mb-3">
                                 <label for="telepon" class="form-label">No Telepon:</label>
-                                <input type="tel" placeholder="08123456789" id="telepon" class="form-control form-control-lg">
+                                <input type="tel" placeholder="08123456789" id="telepon" name="telepon" class="form-control form-control-lg">
                             </div>
                             <div class="mb-4">
                                 <label for="pesan" class="form-label">Jelaskan Kebutuhan Anda:</label>
-                                <textarea placeholder="Contoh: Kami butuh website toko online dengan fitur..." id="pesan" class="form-control" rows="4"></textarea>
+                                <textarea placeholder="Contoh: Kami butuh website toko online dengan fitur..." id="pesan" name="pesan" class="form-control" rows="4"></textarea>
                             </div>
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDisclaimer" required>
@@ -84,7 +84,8 @@
 
         <t-section reverse="reverse" title="Kenapa Memilih Kami?"
             description="Kami mengutamakan kualitas, kejujuran, dan kepercayaan. Setiap produk kami dibuat dengan cinta dan komitmen tinggi untuk kepuasan pelanggan. Dukungan Anda adalah semangat kami untuk terus berkembang."
-            link="#" linkText="Pelajari Lebih Lanjut" img="../foto/support.svg"></t-section>
+            link="#" linkText="Pelajari Lebih Lanjut" img="../foto/programming.svg"
+        ></t-section>
 
         <t-feature-list title="Keunggulan Utama Kami">
             <div class="col-12 col-md-4 text-center">
@@ -157,7 +158,8 @@
 
         <t-section title="Kompetensi Kami"
             description="Kami menjunjung tinggi Kualitas, Integritas, dan Keandalan di setiap proyek. Tim kami terdiri dari developer yang mahir dalam tech stack modern, memastikan produk Anda berperforma tinggi, bug-free, dan mudah dirawat (maintainable). Kami mengedepankan transparansi penuh dalam setiap proses pengembangan."
-            link="#" linkText="Pelajari Lebih Lanjut" img="../foto/support.svg"></t-section>
+            link="#" linkText="Pelajari Lebih Lanjut" img="../foto/website_visitor.svg"
+        ></t-section>
 
         <section class="my-5">
             <div class="container">
@@ -186,7 +188,7 @@
 
         <t-section reverse="reverse" title="Filosofi Pelayanan Kami"
             description="Sebagai perusahaan lokal, kami memahami kebutuhan spesifik bisnis di Nusantara. Kami berkomitmen memberikan solusi berkualitas dunia dengan harga yang terjangkau dan proses yang mudah dipahami. Kami membangun kemitraan jangka panjang, menjadikan kepuasan dan perkembangan bisnis Anda sebagai prioritas utama kami."
-            link="#" linkText="Pelajari Lebih Lanjut" img="../foto/support.svg"></t-section>
+            link="#" linkText="Pelajari Lebih Lanjut" img="../foto/key_insights.svg"></t-section>
 
         <t-cta></t-cta>
     </main>
