@@ -6,18 +6,24 @@ include '../koneksi.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // 1. Membersihkan dan mengambil data dari formulir
-    // Penggunaan mysqli_real_escape_string penting untuk mencegah SQL Injection
-    $nama = mysqli_real_escape_string($koneksi, $_POST['nama']);
-    $email = mysqli_real_escape_string($koneksi, $_POST['email']);
-    $pesan = mysqli_real_escape_string($koneksi, $_POST['pesan']);
+    $nama = isset($_POST['nama']) ? trim($_POST['nama']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $pesan = isset($_POST['pesan']) ? trim($_POST['pesan']) : '';
 
-    // 2. Query SQL untuk memasukkan data
+    // 2. Validasi sederhana: pastikan field wajib tidak kosong
+    if ($nama === '' || $email === '' || $pesan === '') {
+        // Redirect kembali ke halaman kontak dengan status error
+        header("Location: ../../website/contact.html?status=error&msg=missing_fields");
+        exit();
+    }
+
+    // 3. Query SQL untuk memasukkan data
     $sql = "INSERT INTO kontak (nama, email, pesan) VALUES ('$nama', '$email', '$pesan')";
 
-    // 3. Eksekusi query
+    // 4. Eksekusi query
     if (mysqli_query($koneksi, $sql)) {
-        // Jika berhasil, alihkan kembali ke halaman beranda dengan pesan sukses
-        header("Location: index.php?status=sukses");
+        // Jika berhasil, alihkan kembali ke halaman kontak di website dengan pesan sukses
+        header("Location: ../../website/contact.html?status=success");
         exit();
     } else {
         // Jika gagal, tampilkan error

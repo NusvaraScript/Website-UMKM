@@ -1,5 +1,4 @@
 <?php
-// Sertakan file koneksi
 include '../koneksi.php';
 
 // Memastikan data dikirimkan melalui metode POST
@@ -18,30 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // 3. Gunakan prepared statement untuk memasukkan data (lebih aman)
-    $stmt = mysqli_prepare($koneksi, "INSERT INTO pemesanan (nama, email, telepon, pesan) VALUES (?, ?, ?, ?)");
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, 'ssss', $nama, $email, $telepon, $pesan);
-        $exec = mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
+    // 2. Query SQL untuk memasukkan data
+    $sql = "INSERT INTO pemesanan (nama, email, telepon, pesan) VALUES ('$nama', '$email', '$telepon', '$pesan')";
 
-        if ($exec) {
-            header("Location: ../../website/index.html?status=sukses");
-            exit();
-        } else {
-            // Simpan error ke log di server (opsional) dan redirect dengan pesan error
-            error_log('DB insert error: ' . mysqli_error($koneksi));
-            header("Location: ../../website/index.html?status=error&msg=db_error");
-            exit();
-        }
-    } else {
-        // Gagal menyiapkan statement
-        error_log('DB prepare error: ' . mysqli_error($koneksi));
-        header("Location: ../../website/index.html?status=error&msg=db_prepare_error");
+    // 3. Eksekusi query
+    if (mysqli_query($koneksi, $sql)) {
+        // Jika berhasil, alihkan kembali ke halaman website beranda dengan pesan sukses
+        header("Location: ../../website/index.html?status=success");
         exit();
+    } else {
+        // Jika gagal, tampilkan error
+        // Untuk proyek nyata, error ini harus dicatat (logging) bukan ditampilkan ke user
+        echo "Error: " . $sql . "<br>" . mysqli_error($koneksi);
     }
 }
-
-// Menutup koneksi database
 mysqli_close($koneksi);
 ?>

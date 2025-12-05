@@ -50,7 +50,7 @@ $result = mysqli_query($koneksi, $sql_select);
                 <h3 class="text-white text-center mb-4">Nusantara Admin</h3>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">
+                        <a class="nav-link" href="index.php">
                             <i class="bi bi-person-lines-fill me-2"></i> Data Pemesanan
                         </a>
                     </li>
@@ -60,12 +60,7 @@ $result = mysqli_query($koneksi, $sql_select);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-gear-fill me-2"></i> Pengaturan (Dummy)
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">
+                        <a class="nav-link" href="../website/index.html">
                             <i class="bi bi-box-arrow-left me-2"></i> Kembali ke Website
                         </a>
                     </li>

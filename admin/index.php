@@ -55,17 +55,12 @@ $result = mysqli_query($koneksi, $sql_select);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="data_kontak.php">
+                        <a class="nav-link" href="data_kontak.php">
                             <i class="bi bi-person-lines-fill me-2"></i> Data Kontak
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-gear-fill me-2"></i> Pengaturan (Dummy)
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">
+                        <a class="nav-link" href="../website/index.html">
                             <i class="bi bi-box-arrow-left me-2"></i> Kembali ke Website
                         </a>
                     </li>
@@ -78,7 +73,7 @@ $result = mysqli_query($koneksi, $sql_select);
                 <h1 class="h2">Dashboard Admin</h1>
             </div>
 
-            <h2>Data Permintaan Konsultasi</h2>
+            <h2>Data Permintaan Project</h2>
             <?php 
             // Cek apakah ada parameter status dari form pemesanan
             if (isset($_GET['status']) && $_GET['status'] == 'sukses') {
@@ -96,12 +91,11 @@ $result = mysqli_query($koneksi, $sql_select);
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Telepon</th>
-                            <th>Pesan</th>
+                            <th>Order</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        // 3. Looping untuk menampilkan data
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
@@ -116,7 +110,6 @@ $result = mysqli_query($koneksi, $sql_select);
                         } else {
                             echo "<tr><td colspan='6' class='text-center'>Tidak ada data pemesanan yang ditemukan.</td></tr>";
                         }
-                        // 4. Tutup koneksi setelah selesai menggunakan database
                         mysqli_close($koneksi);
                         ?>
                     </tbody>

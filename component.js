@@ -49,8 +49,7 @@ class Tnavbar extends HTMLElement {
                         </ul>
                         
                         <div class="d-flex ms-auto"> 
-                            <a href="#" class="btn btn-outline-light me-2">Login</a> 
-                            <a href="#" class="btn text-white btn-custom-primary">Sign-up</a> 
+                            <a href="index.html#form-pemesanan" class="btn btn-outline-light me-2">Order Sekarang</a> 
                         </div>
                     </div>
                 </div>
@@ -145,7 +144,7 @@ class Tcta extends HTMLElement {
                     <h1 class="text-white">Tunggu Apa Lagi?</h1>
                     <p class="text-white" style="font-size: 18px;">Pesan website sesuai dengan tema yang kamu inginkan, dapat dibatalkan kapan saja.
                     </p>
-                    <a href="#form-pendaftaran" class="btn text-white btn-custom-primary">Pesan Sekarang!</a>
+                    <a href="index.html#form-pemesanan" class="btn text-white btn-custom-primary">Pesan Sekarang!</a>
                 </div>
             </section>
         `;
@@ -172,7 +171,7 @@ class TSection extends HTMLElement {
                             <h2 class="display-5 fw-bold">${title}</h2> 
                             <p style="font-size: 18px;">${description}</p>
                             
-                            <a class="btn text-white btn-custom-primary mt-3 py-2 px-4" href="${link}">
+                            <a class="btn text-white btn-custom-primary mt-3 py-2 px-4" href="about.html">
                                 ${linkText} <i class="ms-2 bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -193,29 +192,36 @@ class Tfooter extends HTMLElement {
         this.innerHTML = `
             <footer id="footer" class="text-white" style="background-color: #0D1B2A;">
                 <div class="container py-4">
-                    <div class="row">
-                        <div class="col-md-4">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-md-4 d-flex flex-column align-items-start mb-3 mb-md-0">
                             <h5><b>Nusaman Tech Solutions</b></h5>
                             <p>Menginovasi Masa Depan Digital Indonesia!</p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 d-flex flex-column align-items-start mb-3 mb-md-0">
                             <h5><b>Kontak</b></h5>
+                            <div class="row d-flex my-1">
+                                <img src="../foto/github.svg" class="col-md-3"/>
+                                <img src="../foto/linkedin.svg" class="col-md-3"/>
+                                <img src="../foto/x.svg" class="col-md-3"/>
+                                <img src="../foto/youtube.svg" class="col-md-3"/>
+                            </div>
                             <ul class="list-unstyled">
                                 <li>Jl. Industri No. 123, Malang</li>
                                 <li>Email: info@nusaman.com</li>
                                 <li>Telp: (021) 111-2233</li>
                             </ul>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 d-flex flex-column align-items-start">
                             <h5><b>Tautan Cepat</b></h5>
                             <ul class="list-unstyled">
                                 <li><a href="index.html" class="text-white text-decoration-none">Beranda</a></li>
                                 <li><a href="about.html" class="text-white text-decoration-none">Tentang Kami</a></li>
+                                <li><a href="service.html" class="text-white text-decoration-none">Layanan</a></li>
                                 <li><a href="contact.html" class="text-white text-decoration-none">Kontak</a></li>
                             </ul>
                         </div>
                     </div>
-                    <hr class="border-white">
+                    <hr class="border-white mt-4">
                     <p class="text-center mb-0">© 2025 Nusaman Tech Solutions. All rights reserved.</p>
                 </div>
             </footer>
